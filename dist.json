@@ -1,0 +1,639 @@
+[
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_arm64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_arm64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_arm64.deb"
+		],
+		"triplet": "aarch64-unknown-linux-gnu",
+		"output_format": "elf64-littleaarch64",
+		"loader": "ld-linux-aarch64.so.1"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_armel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_armel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_armel.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabi",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux.so.3"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_armhf.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_armhf.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_armhf.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabihf",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux-armhf.so.3"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_i386.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_i386.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_mips.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_mips.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_mips.deb"
+		],
+		"triplet": "mips-unknown-linux-gnu",
+		"output_format": "elf32-tradbigmips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_mips64el.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_mips64el.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_mips64el.deb"
+		],
+		"triplet": "mips64el-unknown-linux-gnuabi64",
+		"output_format": "elf64-tradlittlemips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_mipsel.deb"
+		],
+		"triplet": "mipsel-unknown-linux-gnu",
+		"output_format": "elf32-tradlittlemips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_ppc64el.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_ppc64el.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_ppc64el.deb"
+		],
+		"triplet": "powerpc64le-unknown-linux-gnu",
+		"output_format": "elf64-powerpcle",
+		"loader": "ld64.so.2"
+	},
+	{
+		"distribution_version": 9.0,
+		"linux_version": 4.9,
+		"glibc_version": 2.24,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.9.228-1_s390x.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.24-11+deb9u4_s390x.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.24-11+deb9u4_s390x.deb"
+		],
+		"triplet": "s390x-unknown-linux-gnu",
+		"output_format": "elf64-s390",
+		"loader": "ld64.so.1"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_arm64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_arm64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_arm64.deb"
+		],
+		"triplet": "aarch64-unknown-linux-gnu",
+		"output_format": "elf64-littleaarch64",
+		"loader": "ld-linux-aarch64.so.1"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_armel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_armel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_armel.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabi",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux.so.3"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_armhf.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_armhf.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_armhf.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabihf",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux-armhf.so.3"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_i386.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_i386.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_mips.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_mips.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_mips.deb"
+		],
+		"triplet": "mips-unknown-linux-gnu",
+		"output_format": "elf32-tradbigmips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_mipsel.deb"
+		],
+		"triplet": "mipsel-unknown-linux-gnu",
+		"output_format": "elf32-tradlittlemips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_powerpc.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_powerpc.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_powerpc.deb"
+		],
+		"triplet": "powerpc-unknown-linux-gnu",
+		"output_format": "elf32-powerpc",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_ppc64el.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_ppc64el.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_ppc64el.deb"
+		],
+		"triplet": "powerpc64le-unknown-linux-gnu",
+		"output_format": "elf64-powerpcle",
+		"loader": "ld64.so.2"
+	},
+	{
+		"distribution_version": 8.0,
+		"linux_version": 3.16,
+		"glibc_version": 2.19,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_s390x.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_s390x.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_s390x.deb"
+		],
+		"triplet": "s390x-unknown-linux-gnu",
+		"output_format": "elf64-s390",
+		"loader": "ld64.so.1"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_armel.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_armel.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_armel.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabi",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux.so.3"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_armhf.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_armhf.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_armhf.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabihf",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux-armhf.so.3"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_ia64.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6.1-dev_2.13-38+deb7u10_ia64.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6.1_2.13-38+deb7u10_ia64.deb"
+		],
+		"triplet": "ia64-unknown-linux-gnu",
+		"output_format": "elf64-ia64-little",
+		"loader": "ld-linux-ia64.so.2"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_mips.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_mips.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_mips.deb"
+		],
+		"triplet": "mips-unknown-linux-gnu",
+		"output_format": "elf32-tradbigmips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_mipsel.deb"
+		],
+		"triplet": "mipsel-unknown-linux-gnu",
+		"output_format": "elf32-tradlittlemips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_powerpc.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_powerpc.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_powerpc.deb"
+		],
+		"triplet": "powerpc-unknown-linux-gnu",
+		"output_format": "elf32-powerpc",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_s390.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_s390.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_s390.deb"
+		],
+		"triplet": "s390-unknown-linux-gnu",
+		"output_format": "elf32-s390",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_sparc.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_sparc.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_sparc.deb"
+		],
+		"triplet": "sparc-unknown-linux-gnu",
+		"output_format": "elf32-sparc",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.11.3-4_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.11.3-4_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_armel.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.11.3-4_armel.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.11.3-4_armel.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabi",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux.so.3"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_i386.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.11.3-4_i386.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.11.3-4_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_ia64.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6.1-dev_2.11.3-4_ia64.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6.1_2.11.3-4_ia64.deb"
+		],
+		"triplet": "ia64-unknown-linux-gnu",
+		"output_format": "elf64-ia64-little",
+		"loader": "ld-linux-ia64.so.2"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_mips.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.11.3-4_mips.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.11.3-4_mips.deb"
+		],
+		"triplet": "mips-unknown-linux-gnu",
+		"output_format": "elf32-tradbigmips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.11.3-4_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.11.3-4_mipsel.deb"
+		],
+		"triplet": "mipsel-unknown-linux-gnu",
+		"output_format": "elf32-tradlittlemips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_powerpc.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.11.3-4_powerpc.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.11.3-4_powerpc.deb"
+		],
+		"triplet": "powerpc-unknown-linux-gnu",
+		"output_format": "elf32-powerpc",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_s390.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.11.3-4_s390.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.11.3-4_s390.deb"
+		],
+		"triplet": "s390-unknown-linux-gnu",
+		"output_format": "elf32-s390",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 6.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.11,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.32-48squeeze6_sparc.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.11.3-4_sparc.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.11.3-4_sparc.deb"
+		],
+		"triplet": "sparc-unknown-linux-gnu",
+		"output_format": "elf32-sparc",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_alpha.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6.1-dev_2.7-18lenny7_alpha.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6.1_2.7-18lenny7_alpha.deb"
+		],
+		"triplet": "alpha-unknown-linux-gnu",
+		"output_format": "elf64-alpha",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_amd64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_armel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_armel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_armel.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabi",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux.so.3"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_hppa.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_hppa.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_hppa.deb"
+		],
+		"triplet": "hppa-unknown-linux-gnu",
+		"output_format": "elf32-hppa-linux",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_i386.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_i386.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_ia64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6.1-dev_2.7-18lenny7_ia64.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6.1_2.7-18lenny7_ia64.deb"
+		],
+		"triplet": "ia64-unknown-linux-gnu",
+		"output_format": "elf64-ia64-little",
+		"loader": "ld-linux-ia64.so.2"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_mips.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_mips.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_mips.deb"
+		],
+		"triplet": "mips-unknown-linux-gnu",
+		"output_format": "elf32-tradbigmips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_mipsel.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_mipsel.deb"
+		],
+		"triplet": "mipsel-unknown-linux-gnu",
+		"output_format": "elf32-tradlittlemips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_powerpc.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_powerpc.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_powerpc.deb"
+		],
+		"triplet": "powerpc-unknown-linux-gnu",
+		"output_format": "elf32-powerpc",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_s390.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_s390.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_s390.deb"
+		],
+		"triplet": "s390-unknown-linux-gnu",
+		"output_format": "elf32-s390",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution_version": 5.0,
+		"linux_version": 2.6,
+		"glibc_version": 2.7,
+		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux-2.6/linux-libc-dev_2.6.26-29_sparc.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.7-18lenny7_sparc.deb",
+			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.7-18lenny7_sparc.deb"
+		],
+		"triplet": "sparc-unknown-linux-gnu",
+		"output_format": "elf32-sparc",
+		"loader": "ld-linux.so.2"
+	}
+]
