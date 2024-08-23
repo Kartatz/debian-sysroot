@@ -54,13 +54,13 @@ while read item; do
 	cp --recursive './usr/include' "${sysroot_directory}"
 	cp --recursive './usr/lib' "${sysroot_directory}"
 	
-	if (( distribution_version > 6 )); then
+	if (( distribution_version >= 7 )); then
 		mv "./lib/${host}/"* "${sysroot_directory}/lib"
 	else
 		mv "./lib/"* "${sysroot_directory}/lib"
 	fi
 	
-	if (( distribution_version > 6 )); then
+	if (( distribution_version >= 7 )); then
 		mv "${sysroot_directory}/lib/${host}/"* "${sysroot_directory}/lib"
 		cp --recursive "${sysroot_directory}/include/${host}/"* "${sysroot_directory}/include"
 		
@@ -80,8 +80,12 @@ while read item; do
 	
 	echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ./libpthread.so.0 ./libpthread_nonshared.a  )" > './libpthread.so'
 	
-	if (( distribution_version > 8 )) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
+	if (( distribution_version >= 9 )) && (( distribution_version <= 10 )) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ./libm.so.6  AS_NEEDED ( ./libmvec_nonshared.a ./libmvec.so.1 ) )" > './libm.so'
+	fi
+	
+	if (( distribution_version >= 11 )) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
+		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ./libm.so.6  AS_NEEDED ( ./libmvec.so.1 ) )" > './libm.so'
 	fi
 	
 	if [[ "${triplet}" == mips*-unknown-linux-gnu ]] || [ "${triplet}" == 'powerpc-unknown-linux-gnu' ] || [ "${triplet}" == 's390-unknown-linux-gnu' ] || [ "${triplet}" == 'sparc-unknown-linux-gnu' ]; then
