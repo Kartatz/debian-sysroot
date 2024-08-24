@@ -78,7 +78,9 @@ while read item; do
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ./libc.so.6 ./libc_nonshared.a  AS_NEEDED ( ./${loader} ) )" > './libc.so'
 	fi
 	
-	echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ./libpthread.so.0 ./libpthread_nonshared.a  )" > './libpthread.so'
+	if (( distribution_version <= 9 )); then
+		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ./libpthread.so.0 ./libpthread_nonshared.a  )" > './libpthread.so'
+	fi
 	
 	if (( distribution_version >= 9 )) && (( distribution_version <= 10 )) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ./libm.so.6  AS_NEEDED ( ./libmvec_nonshared.a ./libmvec.so.1 ) )" > './libm.so'
