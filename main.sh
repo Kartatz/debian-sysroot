@@ -10,7 +10,7 @@ declare -r temporary_directory='/tmp/obggcc-sysroot'
 cd "${temporary_directory}"
 
 while read item; do
-	declare distribution="$(jq '.distribution' <<< "${item}")"
+	declare distribution="$(jq  --raw-output '.distribution' <<< "${item}")"
 	declare distribution_version="$(jq '.distribution_version' <<< "${item}")"
 	declare glibc_version="$(jq '.glibc_version' <<< "${item}")"
 	declare linux_version="$(jq '.linux_version' <<< "${item}")"
@@ -21,9 +21,16 @@ while read item; do
 	declare loader="$(jq --raw-output '.loader' <<< "${item}")"
 	
 	declare sysroot_directory="${workdir}/${triplet}${glibc_version}"
+	declare tarball_filename="${sysroot_directory}.tar.xz"
+	
 	[ -d "${sysroot_directory}" ] || mkdir "${sysroot_directory}"
 	
-	echo "- Generating sysroot for ${triplet} (glibc = ${glibc_version}, linux = ${linux_version}, debian = ${distribution_version})"
+	echo "- Generating sysroot for ${triplet} (glibc = ${glibc_version}, linux = ${linux_version}, ${distribution} = ${distribution_version})"
+	
+	if [ -f "${tarball_filename}" ]; then
+		echo "+ Already exists. Skip"
+		continue
+	fi
 	
 	while read package; do
 		curl \
@@ -36,35 +43,43 @@ while read item; do
 			--location \
 			--remote-name \
 			--url "${package}"
-		
-		if [ "${distribution}" = 'debian' ]; then
-			for file in *.deb; do
-				ar x "${file}"
-				
-				if [ -f './data.tar.gz' ]; then
-					declare filename='./data.tar.gz'
-				else
-					declare filename='./data.tar.xz'
-				fi
-				
-				tar --extract --file="${filename}"
-				
-				unlink "${filename}"
-			done
-		else
-			for file in *.rpm; do
-				rpm2cpio "${file}" | cpio -idmv "${file}"
-				unlink "${filename}"
-			done
-		fi
 	done <<< "$(jq --raw-output --compact-output '.[]' <<< "${packages}")"
+	
+	if [ "${distribution}" = 'debian' ]; then
+		for file in *.deb; do
+			ar x "${file}"
+			
+			if [ -f './data.tar.gz' ]; then
+				declare filename='./data.tar.gz'
+			else
+				declare filename='./data.tar.xz'
+			fi
+			
+			tar --extract --file="${filename}"
+			
+			unlink "${filename}"
+		done
+	else
+		for file in *.rpm; do
+			rpm2cpio "${file}" | cpio \
+				--extract \
+				--make-directories \
+				--preserve-modification-time \
+				--quiet
+			unlink "${file}"
+		done
+	fi
 	
 	cp --recursive './usr/include' "${sysroot_directory}"
 	
-	if [ -d './usr/lib64' ]; then
+	if [ "${distribution}" = 'centos' ] && [ -d './usr/lib64' ]; then
 		mv './usr/lib64' "${sysroot_directory}/lib"
 	else
 		cp --recursive './usr/lib' "${sysroot_directory}"
+	fi
+	
+	if [ "${distribution}" = 'centos' ]; then
+		mv './lib'*'/'* "${sysroot_directory}/lib"
 	fi
 	
 	if [ "${distribution}" = 'debian' ]; then
@@ -112,8 +127,6 @@ while read item; do
 	cd "${temporary_directory}"
 	
 	rm --force --recursive ./*
-	
-	declare tarball_filename="${sysroot_directory}.tar.xz"
 	
 	echo "- Creating tarball at ${tarball_filename}"
 	
