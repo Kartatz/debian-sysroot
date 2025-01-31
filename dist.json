@@ -1,5 +1,6 @@
 [
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -13,6 +14,7 @@
 		"loader": "ld-linux-x86-64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -26,6 +28,7 @@
 		"loader": "ld-linux-aarch64.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -39,6 +42,7 @@
 		"loader": "ld-linux.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -52,6 +56,7 @@
 		"loader": "ld-linux-armhf.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -65,6 +70,7 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -78,6 +84,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -91,6 +98,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -104,6 +112,7 @@
 		"loader": "ld64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
 		"glibc_version": 2.31,
@@ -117,6 +126,7 @@
 		"loader": "ld64.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -130,6 +140,7 @@
 		"loader": "ld-linux-x86-64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -143,6 +154,7 @@
 		"loader": "ld-linux-aarch64.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -156,6 +168,7 @@
 		"loader": "ld-linux.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -169,6 +182,7 @@
 		"loader": "ld-linux-armhf.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -182,6 +196,7 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -195,6 +210,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -208,6 +224,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -221,6 +238,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -234,6 +252,7 @@
 		"loader": "ld64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 10.0,
 		"linux_version": 4.19,
 		"glibc_version": 2.28,
@@ -247,6 +266,7 @@
 		"loader": "ld64.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -260,6 +280,7 @@
 		"loader": "ld-linux-x86-64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -273,6 +294,7 @@
 		"loader": "ld-linux-aarch64.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -286,6 +308,7 @@
 		"loader": "ld-linux.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -299,6 +322,7 @@
 		"loader": "ld-linux-armhf.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -312,6 +336,7 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -325,6 +350,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -338,6 +364,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -351,6 +378,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -364,6 +392,7 @@
 		"loader": "ld64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
 		"glibc_version": 2.24,
@@ -377,6 +406,7 @@
 		"loader": "ld64.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -390,6 +420,7 @@
 		"loader": "ld-linux-x86-64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -403,6 +434,7 @@
 		"loader": "ld-linux-aarch64.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -416,6 +448,7 @@
 		"loader": "ld-linux.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -429,6 +462,7 @@
 		"loader": "ld-linux-armhf.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -442,6 +476,24 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "centos",
+		"distribution_version": 7.0,
+		"linux_version": 3.10,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/kernel-headers-3.10.0-1160.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-2.17-317.el7.i686.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-common-2.17-317.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-devel-2.17-317.el7.i686.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-headers-2.17-317.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-static-2.17-317.el7.i686.rpm"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -455,6 +507,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -468,6 +521,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -481,6 +535,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -494,6 +549,7 @@
 		"loader": "ld64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
 		"glibc_version": 2.19,
@@ -507,6 +563,24 @@
 		"loader": "ld64.so.1"
 	},
 	{
+		"distribution": "centos",
+		"distribution_version": 7.0,
+		"linux_version": 3.10,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/kernel-headers-3.10.0-1160.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-2.17-317.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-common-2.17-317.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-devel-2.17-317.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-headers-2.17-317.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-static-2.17-317.el7.x86_64.rpm"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -520,6 +594,7 @@
 		"loader": "ld-linux-x86-64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -533,6 +608,7 @@
 		"loader": "ld-linux.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -546,6 +622,7 @@
 		"loader": "ld-linux-armhf.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -559,6 +636,7 @@
 		"loader": "ld-linux-ia64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -572,6 +650,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -585,6 +664,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -598,6 +678,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -611,6 +692,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -624,6 +706,7 @@
 		"loader": "ld64.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 7.0,
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
@@ -637,6 +720,7 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -650,6 +734,7 @@
 		"loader": "ld-linux-x86-64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -663,6 +748,7 @@
 		"loader": "ld-linux.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -676,6 +762,7 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -689,6 +776,7 @@
 		"loader": "ld-linux-ia64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -702,6 +790,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -715,6 +804,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -728,6 +818,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -741,6 +832,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 6.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.11,
@@ -754,6 +846,7 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -767,6 +860,7 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -780,6 +874,7 @@
 		"loader": "ld-linux-x86-64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -793,6 +888,7 @@
 		"loader": "ld-linux.so.3"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -806,6 +902,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -819,6 +916,7 @@
 		"loader": "ld-linux.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -832,6 +930,7 @@
 		"loader": "ld-linux-ia64.so.2"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -845,6 +944,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -858,6 +958,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -871,6 +972,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,
@@ -884,6 +986,7 @@
 		"loader": "ld.so.1"
 	},
 	{
+		"distribution": "debian",
 		"distribution_version": 5.0,
 		"linux_version": 2.6,
 		"glibc_version": 2.7,

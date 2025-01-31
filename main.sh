@@ -10,6 +10,7 @@ declare -r temporary_directory='/tmp/obggcc-sysroot'
 cd "${temporary_directory}"
 
 while read item; do
+	declare distribution="$(jq '.distribution' <<< "${item}")"
 	declare distribution_version="$(jq '.distribution_version' <<< "${item}")"
 	declare glibc_version="$(jq '.glibc_version' <<< "${item}")"
 	declare linux_version="$(jq '.linux_version' <<< "${item}")"
@@ -36,41 +37,55 @@ while read item; do
 			--remote-name \
 			--url "${package}"
 		
-		for file in *.deb; do
-			ar x "${file}"
-			
-			if [ -f './data.tar.gz' ]; then
-				declare filename='./data.tar.gz'
-			else
-				declare filename='./data.tar.xz'
-			fi
-			
-			tar --extract --file="${filename}"
-			
-			unlink "${filename}"
-		done
+		if [ "${distribution}" = 'debian' ]; then
+			for file in *.deb; do
+				ar x "${file}"
+				
+				if [ -f './data.tar.gz' ]; then
+					declare filename='./data.tar.gz'
+				else
+					declare filename='./data.tar.xz'
+				fi
+				
+				tar --extract --file="${filename}"
+				
+				unlink "${filename}"
+			done
+		else
+			for file in *.rpm; do
+				rpm2cpio "${file}" | cpio -idmv "${file}"
+				unlink "${filename}"
+			done
+		fi
 	done <<< "$(jq --raw-output --compact-output '.[]' <<< "${packages}")"
 	
 	cp --recursive './usr/include' "${sysroot_directory}"
-	cp --recursive './usr/lib' "${sysroot_directory}"
 	
-	if (( distribution_version >= 7 )); then
-		mv "./lib/${host}/"* "${sysroot_directory}/lib"
+	if [ -d './usr/lib64' ]; then
+		mv './usr/lib64' "${sysroot_directory}/lib"
 	else
-		mv "./lib/"* "${sysroot_directory}/lib"
+		cp --recursive './usr/lib' "${sysroot_directory}"
 	fi
 	
-	if (( distribution_version >= 7 )); then
-		mv "${sysroot_directory}/lib/${host}/"* "${sysroot_directory}/lib"
-		cp --recursive "${sysroot_directory}/include/${host}/"* "${sysroot_directory}/include"
+	if [ "${distribution}" = 'debian' ]; then
+		if (( distribution_version >= 7 )); then
+			mv "./lib/${host}/"* "${sysroot_directory}/lib"
+		else
+			mv "./lib/"* "${sysroot_directory}/lib"
+		fi
 		
-		rm --recursive "${sysroot_directory}/lib/${host}"
-		rm --recursive "${sysroot_directory}/include/${host}"
+		if (( distribution_version >= 7 )); then
+			mv "${sysroot_directory}/lib/${host}/"* "${sysroot_directory}/lib"
+			cp --recursive "${sysroot_directory}/include/${host}/"* "${sysroot_directory}/include"
+			
+			rm --recursive "${sysroot_directory}/lib/${host}"
+			rm --recursive "${sysroot_directory}/include/${host}"
+		fi
 	fi
 	
 	cd "${sysroot_directory}/lib"
 	
-	find . -type l | xargs ls -l | grep '/lib/' | awk '{print "unlink "$9" && ln -s ./$(basename "$11") ./$(basename "$9")"}' | bash
+	find . -type l | xargs ls -l | grep --perl-regexp '/lib(?:64)?/' | awk '{print "unlink "$9" && ln -s ./$(basename "$11") ./$(basename "$9")"}' | bash
 	
 	if [ "${triplet}" == 'alpha-unknown-linux-gnu' ] || [ "${triplet}" == 'ia64-unknown-linux-gnu' ]; then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ./libc.so.6.1 ./libc_nonshared.a  AS_NEEDED ( ./${loader} ) )" > './libc.so'
