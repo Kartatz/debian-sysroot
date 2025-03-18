@@ -1347,5 +1347,18 @@
 		"triplet": "sparc-unknown-linux-gnu",
 		"output_format": "elf32-sparc",
 		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 2.0,
+		"linux_version": 2.0,
+		"glibc_version": 2.0,
+		"packages": [
+			"https://archive.debian.org/debian/dists/hamm/main/binary-i386/devel/libc6-dev_2.0.7t-1.deb",
+			"https://archive.debian.org/debian/dists/hamm/main/binary-i386/base/libc6_2.0.7t-1.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
 	}
 ]
