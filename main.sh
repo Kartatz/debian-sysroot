@@ -29,6 +29,9 @@ while read item; do
 	
 	[ -d "${sysroot_directory}" ] || mkdir "${sysroot_directory}"
 	
+	rm --force --recursive "${temporary_directory}/"*
+	rm --force --recursive "${sysroot_directory}/"*
+	
 	echo "- Generating sysroot for ${triplet} (glibc = ${glibc_version}, linux = ${linux_version}, ${distribution} = ${distribution_version})"
 	
 	if [ -f "${tarball_filename}" ]; then
@@ -87,6 +90,9 @@ while read item; do
 	fi
 	
 	[ -d "${sysroot_directory}/lib/${host}/gconv" ] && rm --recursive "${sysroot_directory}/lib/${host}/gconv"
+	[ -d "${sysroot_directory}/lib/gconv" ] && rm --recursive "${sysroot_directory}/lib/gconv"
+	[ -d "${sysroot_directory}/lib/rtkaio" ] && rm --recursive "${sysroot_directory}/lib/rtkaio"
+	[ -d "${sysroot_directory}/lib/libc" ] && rm --recursive "${sysroot_directory}/lib/libc"
 	
 	if [ "${distribution}" = 'debian' ]; then
 		if (( distribution_version >= 7 )); then
