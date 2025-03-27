@@ -1,5 +1,173 @@
 [
 	{
+		"distribution": "ubuntu",
+		"distribution_version": 24.04,
+		"linux_version": 6.8,
+		"glibc_version": 2.39,
+		"packages": [
+			"https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_6.8.0-31.31_amd64.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.40-1ubuntu3_amd64.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.39-0ubuntu8_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 24.04,
+		"linux_version": 6.8,
+		"glibc_version": 2.39,
+		"packages": [
+			"https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_6.8.0-31.31_i386.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.39-0ubuntu8_i386.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.39-0ubuntu8_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 24.04,
+		"linux_version": 6.8,
+		"glibc_version": 2.39,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_6.8.0-31.31_arm64.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.39-0ubuntu8_arm64.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.39-0ubuntu8_arm64.deb"
+		],
+		"triplet": "aarch64-unknown-linux-gnu",
+		"output_format": "elf64-littleaarch64",
+		"loader": "ld-linux-aarch64.so.1"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 24.04,
+		"linux_version": 6.8,
+		"glibc_version": 2.39,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_6.8.0-31.31_armhf.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.39-0ubuntu8_armhf.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.39-0ubuntu8_armhf.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabihf",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux-armhf.so.3"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 24.04,
+		"linux_version": 6.8,
+		"glibc_version": 2.39,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_6.8.0-31.31_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.39-0ubuntu8_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.39-0ubuntu8_ppc64el.deb"
+		],
+		"triplet": "powerpc64le-unknown-linux-gnu",
+		"output_format": "elf64-powerpcle",
+		"loader": "ld64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 24.04,
+		"linux_version": 6.8,
+		"glibc_version": 2.39,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_6.8.0-31.31_s390x.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.39-0ubuntu8_s390x.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.39-0ubuntu8_s390x.deb"
+		],
+		"triplet": "s390x-unknown-linux-gnu",
+		"output_format": "elf64-s390",
+		"loader": "ld64.so.1"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 22.04,
+		"linux_version": 5.15,
+		"glibc_version": 2.35,
+		"packages": [
+			"https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_5.15.0-25.25_amd64.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.35-0ubuntu3_amd64.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 22.04,
+		"linux_version": 5.15,
+		"glibc_version": 2.35,
+		"packages": [
+			"https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_5.15.0-25.25_i386.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.35-0ubuntu3_i386.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 22.04,
+		"linux_version": 5.15,
+		"glibc_version": 2.35,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_5.15.0-25.25_arm64.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.35-0ubuntu3_arm64.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.35-0ubuntu3_arm64.deb"
+		],
+		"triplet": "aarch64-unknown-linux-gnu",
+		"output_format": "elf64-littleaarch64",
+		"loader": "ld-linux-aarch64.so.1"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 22.04,
+		"linux_version": 5.15,
+		"glibc_version": 2.35,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_5.15.0-25.25_armhf.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.35-0ubuntu3_armhf.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.35-0ubuntu3_armhf.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabihf",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux-armhf.so.3"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 22.04,
+		"linux_version": 5.15,
+		"glibc_version": 2.35,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_5.15.0-25.25_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.35-0ubuntu3_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.35-0ubuntu3_ppc64el.deb"
+		],
+		"triplet": "powerpc64le-unknown-linux-gnu",
+		"output_format": "elf64-powerpcle",
+		"loader": "ld64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 22.04,
+		"linux_version": 5.15,
+		"glibc_version": 2.35,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_5.15.0-25.25_s390x.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.35-0ubuntu3_s390x.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.35-0ubuntu3_s390x.deb"
+		],
+		"triplet": "s390x-unknown-linux-gnu",
+		"output_format": "elf64-s390",
+		"loader": "ld64.so.1"
+	},
+	{
 		"distribution": "debian",
 		"distribution_version": 11.0,
 		"linux_version": 5.10,
@@ -266,6 +434,90 @@
 		"loader": "ld64.so.1"
 	},
 	{
+		"distribution": "ubuntu",
+		"distribution_version": 18.04,
+		"linux_version": 4.15,
+		"glibc_version": 2.27,
+		"packages": [
+			"https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_4.15.0-20.21_amd64.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.27-3ubuntu1_amd64.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.27-3ubuntu1_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 18.04,
+		"linux_version": 4.15,
+		"glibc_version": 2.27,
+		"packages": [
+			"https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_4.15.0-20.21_i386.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.27-3ubuntu1_i386.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.27-3ubuntu1_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 18.04,
+		"linux_version": 4.15,
+		"glibc_version": 2.27,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.15.0-20.21_arm64.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.27-3ubuntu1_arm64.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.27-3ubuntu1_arm64.deb"
+		],
+		"triplet": "aarch64-unknown-linux-gnu",
+		"output_format": "elf64-littleaarch64",
+		"loader": "ld-linux-aarch64.so.1"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 18.04,
+		"linux_version": 4.15,
+		"glibc_version": 2.27,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.15.0-20.21_armhf.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.27-3ubuntu1_armhf.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.27-3ubuntu1_armhf.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabihf",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux-armhf.so.3"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 18.04,
+		"linux_version": 4.15,
+		"glibc_version": 2.27,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.15.0-20.21_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.27-3ubuntu1_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.27-3ubuntu1_ppc64el.deb"
+		],
+		"triplet": "powerpc64le-unknown-linux-gnu",
+		"output_format": "elf64-powerpcle",
+		"loader": "ld64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 18.04,
+		"linux_version": 4.15,
+		"glibc_version": 2.27,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.15.0-20.21_s390x.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.27-3ubuntu1_s390x.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.27-3ubuntu1_s390x.deb"
+		],
+		"triplet": "s390x-unknown-linux-gnu",
+		"output_format": "elf64-s390",
+		"loader": "ld64.so.1"
+	},
+	{
 		"distribution": "debian",
 		"distribution_version": 9.0,
 		"linux_version": 4.9,
@@ -406,6 +658,104 @@
 		"loader": "ld64.so.1"
 	},
 	{
+		"distribution": "ubuntu",
+		"distribution_version": 16.04,
+		"linux_version": 4.4,
+		"glibc_version": 2.23,
+		"packages": [
+			"https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_4.4.0-21.37_amd64.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.23-0ubuntu3_amd64.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.23-0ubuntu3_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 16.04,
+		"linux_version": 4.4,
+		"glibc_version": 2.23,
+		"packages": [
+			"https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_4.4.0-21.37_i386.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.23-0ubuntu3_i386.deb",
+			"https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.23-0ubuntu3_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 16.04,
+		"linux_version": 4.4,
+		"glibc_version": 2.23,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.4.0-21.37_arm64.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.23-0ubuntu3_arm64.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.23-0ubuntu3_arm64.deb"
+		],
+		"triplet": "aarch64-unknown-linux-gnu",
+		"output_format": "elf64-littleaarch64",
+		"loader": "ld-linux-aarch64.so.1"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 16.04,
+		"linux_version": 4.4,
+		"glibc_version": 2.23,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.4.0-21.37_armhf.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.23-0ubuntu3_armhf.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.23-0ubuntu3_armhf.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabihf",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux-armhf.so.3"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 16.04,
+		"linux_version": 4.4,
+		"glibc_version": 2.23,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.4.0-21.37_powerpc.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.23-0ubuntu3_powerpc.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.23-0ubuntu3_powerpc.deb"
+		],
+		"triplet": "powerpc-unknown-linux-gnu",
+		"output_format": "elf32-powerpc",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 16.04,
+		"linux_version": 4.4,
+		"glibc_version": 2.23,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.4.0-21.37_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.23-0ubuntu3_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.23-0ubuntu3_ppc64el.deb"
+		],
+		"triplet": "powerpc64le-unknown-linux-gnu",
+		"output_format": "elf64-powerpcle",
+		"loader": "ld64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 16.04,
+		"linux_version": 4.4,
+		"glibc_version": 2.23,
+		"packages": [
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_4.4.0-21.37_s390x.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.23-0ubuntu3_s390x.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.23-0ubuntu3_s390x.deb"
+		],
+		"triplet": "s390x-unknown-linux-gnu",
+		"output_format": "elf64-s390",
+		"loader": "ld64.so.1"
+	},
+	{
 		"distribution": "debian",
 		"distribution_version": 8.0,
 		"linux_version": 3.16,
@@ -470,23 +820,6 @@
 			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.16.56-1+deb8u1_i386.deb",
 			"https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u10_i386.deb",
 			"https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u10_i386.deb"
-		],
-		"triplet": "i386-unknown-linux-gnu",
-		"output_format": "elf32-i386",
-		"loader": "ld-linux.so.2"
-	},
-	{
-		"distribution": "centos",
-		"distribution_version": 7.0,
-		"linux_version": 3.10,
-		"glibc_version": 2.17,
-		"packages": [
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/kernel-headers-3.10.0-1160.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-2.17-317.el7.i686.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-common-2.17-317.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-devel-2.17-317.el7.i686.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-headers-2.17-317.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-static-2.17-317.el7.i686.rpm"
 		],
 		"triplet": "i386-unknown-linux-gnu",
 		"output_format": "elf32-i386",
@@ -578,6 +911,51 @@
 		"triplet": "x86_64-unknown-linux-gnu",
 		"output_format": "elf64-x86-64",
 		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution": "centos",
+		"distribution_version": 7.0,
+		"linux_version": 3.10,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/kernel-headers-3.10.0-1160.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-2.17-317.el7.i686.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-common-2.17-317.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-devel-2.17-317.el7.i686.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-headers-2.17-317.el7.x86_64.rpm",
+			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-static-2.17-317.el7.i686.rpm"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 12.04,
+		"linux_version": 3.2,
+		"glibc_version": 2.15,
+		"packages": [
+			"https://old-releases.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_3.2.0-23.36_amd64.deb",
+			"https://old-releases.ubuntu.com/ubuntu/pool/main/e/eglibc/libc6-dev_2.15-0ubuntu10_amd64.deb",
+			"https://old-releases.ubuntu.com/ubuntu/pool/main/e/eglibc/libc6_2.15-0ubuntu10_amd64.deb"
+		],
+		"triplet": "x86_64-unknown-linux-gnu",
+		"output_format": "elf64-x86-64",
+		"loader": "ld-linux-x86-64.so.2"
+	},
+	{
+		"distribution": "ubuntu",
+		"distribution_version": 12.04,
+		"linux_version": 3.2,
+		"glibc_version": 2.15,
+		"packages": [
+			"https://old-releases.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_3.2.0-23.36_i386.deb",
+			"https://old-releases.ubuntu.com/ubuntu/pool/main/e/eglibc/libc6-dev_2.15-0ubuntu10_i386.deb",
+			"https://old-releases.ubuntu.com/ubuntu/pool/main/e/eglibc/libc6_2.15-0ubuntu10_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
 	},
 	{
 		"distribution": "debian",

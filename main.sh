@@ -20,17 +20,30 @@ while read item; do
 	declare output_format="$(jq --raw-output '.output_format' <<< "${item}")"
 	declare loader="$(jq --raw-output '.loader' <<< "${item}")"
 	
+	distribution_version=${distribution_version%.*}
+	
+	declare debian='0'
+	declare ubuntu='0'
+	declare centos='0'
+	
+	if [ "${distribution}" = 'debian' ]; then
+		debian='1'
+	fi
+	
+	if [ "${distribution}" = 'ubuntu' ]; then
+		ubuntu='1'
+	fi
+	
+	if [ "${distribution}" = 'centos' ]; then
+		centos='1'
+	fi
+	
 	if [ "${distribution_version}" = '2.2' ]; then
 		distribution_version='2'
 	fi
 	
 	declare sysroot_directory="${workdir}/${triplet}${glibc_version}"
 	declare tarball_filename="${sysroot_directory}.tar.xz"
-	
-	[ -d "${sysroot_directory}" ] || mkdir "${sysroot_directory}"
-	
-	rm --force --recursive "${temporary_directory}/"*
-	rm --force --recursive "${sysroot_directory}/"*
 	
 	echo "- Generating sysroot for ${triplet} (glibc = ${glibc_version}, linux = ${linux_version}, ${distribution} = ${distribution_version})"
 	
@@ -39,7 +52,14 @@ while read item; do
 		continue
 	fi
 	
+	[ -d "${sysroot_directory}" ] || mkdir "${sysroot_directory}"
+	
+	rm --force --recursive "${temporary_directory}/"*
+	rm --force --recursive "${sysroot_directory}/"*
+	
 	while read package; do
+		echo "- Fetching data from '${package}'"
+		
 		curl \
 			--connect-timeout '10' \
 			--retry '15' \
@@ -52,17 +72,23 @@ while read item; do
 			--url "${package}"
 	done <<< "$(jq --raw-output --compact-output '.[]' <<< "${packages}")"
 	
-	if [ "${distribution}" = 'debian' ]; then
+	if [ "${distribution}" = 'debian' ] || [ "${distribution}" = 'ubuntu' ]; then
 		for file in *.deb; do
 			ar x "${file}"
 			
 			if [ -f './data.tar.gz' ]; then
 				declare filename='./data.tar.gz'
+			elif [ -f './data.tar.zst' ]; then
+				declare filename='./data.tar.zst'
 			else
 				declare filename='./data.tar.xz'
 			fi
 			
-			tar --extract --file="${filename}"
+			if [[ "${filename}" = *'zst'* ]]; then
+				tar --use-compress-program='unzstd' --extract --file="${filename}"
+			else
+				tar --extract --file="${filename}"
+			fi
 			
 			unlink "${filename}"
 		done
@@ -79,13 +105,13 @@ while read item; do
 	
 	cp --recursive './usr/include' "${sysroot_directory}"
 	
-	if [ "${distribution}" = 'centos' ] && [ -d './usr/lib64' ]; then
+	if (( centos || ubuntu )) && [ -d './usr/lib64' ]; then
 		mv './usr/lib64' "${sysroot_directory}/lib"
 	else
 		cp --recursive './usr/lib' "${sysroot_directory}"
 	fi
 	
-	if [ "${distribution}" = 'centos' ]; then
+	if (( centos )); then
 		mv './lib'*'/'* "${sysroot_directory}/lib"
 	fi
 	
@@ -94,18 +120,31 @@ while read item; do
 	[ -d "${sysroot_directory}/lib/rtkaio" ] && rm --recursive "${sysroot_directory}/lib/rtkaio"
 	[ -d "${sysroot_directory}/lib/libc" ] && rm --recursive "${sysroot_directory}/lib/libc"
 	
-	if [ "${distribution}" = 'debian' ]; then
-		if (( distribution_version >= 7 )); then
-			mv "./lib/${host}/"* "${sysroot_directory}/lib"
+	if (( debian || ubuntu )); then
+		if (( debian && distribution_version >= 7 )) || (( ubuntu )); then
+			
+			if (( debian || ( ubuntu && distribution_version < 24 ) )); then
+				mv "./lib/${host}/"* "${sysroot_directory}/lib"
+			fi
+			
+			if (( ubuntu )); then
+				mv "./usr/lib/${host}/"* "${sysroot_directory}/lib"
+			fi
 		else
 			mv "./lib/"* "${sysroot_directory}/lib"
 		fi
 		
-		if (( distribution_version >= 7 )); then
-			mv "${sysroot_directory}/lib/${host}/"* "${sysroot_directory}/lib"
+		if (( debian && distribution_version >= 7 )) || (( ubuntu )); then
+			if (( debian )); then
+				cp --recursive "${sysroot_directory}/lib/${host}/"* "${sysroot_directory}/lib"
+			fi
+			
 			cp --recursive "${sysroot_directory}/include/${host}/"* "${sysroot_directory}/include"
 			
-			rm --recursive "${sysroot_directory}/lib/${host}"
+			if (( debian )); then
+				rm --recursive "${sysroot_directory}/lib/${host}"
+			fi
+			
 			rm --recursive "${sysroot_directory}/include/${host}"
 		fi
 	fi
@@ -115,10 +154,12 @@ while read item; do
 	[ -d './nptl' ] && rm --recursive './nptl'
 	[ -d './tls' ] && rm --recursive './tls'
 	[ -d './audit' ] && rm --recursive './audit'
+	[ -d './gconv' ] && rm --recursive './gconv'
+	[ -d './libc' ] && rm --recursive './libc'
 	
 	[ -f './pt_chown' ] && unlink './pt_chown'
 	
-	find . -type l | xargs ls -l | grep --perl-regexp '/lib(?:64)?/' | awk '{print "unlink "$9" && ln -s ./$(basename "$11") ./$(basename "$9")"}' | bash
+	find . -type l | xargs ls -l | grep --perl-regexp '/lib(?:64)?/' | awk '{print "unlink $(basename "$9") && ln --symbolic ./$(basename "$11") ./$(basename "$9")"}' | bash
 	
 	if [ "${triplet}" == 'alpha-unknown-linux-gnu' ] || [ "${triplet}" == 'ia64-unknown-linux-gnu' ]; then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( libc.so.6.1 libc_nonshared.a AS_NEEDED ( ${loader} ) )" > './libc.so'
@@ -126,15 +167,15 @@ while read item; do
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( libc.so.6 libc_nonshared.a AS_NEEDED ( ${loader} ) )" > './libc.so'
 	fi
 	
-	if (( distribution_version >= 4 )) && (( distribution_version <= 9 )); then
+	if (( ( debian || centos ) && distribution_version >= 4 && distribution_version <= 9 )) || (( ubuntu && distribution_version >= 12 && distribution_version <= 18 )); then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( libpthread.so.0 libpthread_nonshared.a )" > './libpthread.so'
 	fi
 	
-	if (( distribution_version >= 9 )) && (( distribution_version <= 10 )) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
+	if ( (( ubuntu && distribution_version >= 16 && distribution_version <= 18 )) || (( debian && distribution_version >= 9 && distribution_version <= 10 )) ) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( libm.so.6 AS_NEEDED ( libmvec_nonshared.a libmvec.so.1 ) )" > './libm.so'
 	fi
 	
-	if (( distribution_version >= 11 )) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
+	if ( (( debian && distribution_version >= 11 )) || (( ubuntu && distribution_version >= 22 )) ) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( libm.so.6 AS_NEEDED ( libmvec.so.1 ) )" > './libm.so'
 	fi
 	
