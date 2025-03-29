@@ -156,10 +156,20 @@ while read item; do
 	[ -d './audit' ] && rm --recursive './audit'
 	[ -d './gconv' ] && rm --recursive './gconv'
 	[ -d './libc' ] && rm --recursive './libc'
+	[ -d "./${host}" ] && rm --recursive "./${host}"
 	
 	[ -f './pt_chown' ] && unlink './pt_chown'
 	
 	find . -type l | xargs ls -l | grep --perl-regexp '/lib(?:64)?/' | awk '{print "unlink $(basename "$9") && ln --symbolic ./$(basename "$11") ./$(basename "$9")"}' | bash
+	
+	if (( ubuntu )); then
+		for source in lib*.so.*; do
+			destination="$(awk -F  '.' '{print $1"."$2}' <<< "${source}")"
+			[ -f "${destination}" ] && continue
+			
+			ln --symbolic "${source}" "${destination}"
+		done
+	fi
 	
 	if [ "${triplet}" == 'alpha-unknown-linux-gnu' ] || [ "${triplet}" == 'ia64-unknown-linux-gnu' ]; then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( libc.so.6.1 libc_nonshared.a AS_NEEDED ( ${loader} ) )" > './libc.so'

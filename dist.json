@@ -146,7 +146,7 @@
 		"glibc_version": 2.35,
 		"packages": [
 			"https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_5.15.0-25.25_ppc64el.deb",
-			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.35-0ubuntu3_ppc64el.deb",
+			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.35-0ubuntu3_ppc64el.deb",
 			"https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.35-0ubuntu3_ppc64el.deb"
 		],
 		"triplet": "powerpc64le-unknown-linux-gnu",
