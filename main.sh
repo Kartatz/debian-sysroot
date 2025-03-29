@@ -26,6 +26,17 @@ while read item; do
 	declare ubuntu='0'
 	declare centos='0'
 	
+	declare amd64='0'
+	declare aarch64='0'
+	
+	if [ "${triplet}" = 'x86_64-unknown-linux-gnu' ]; then
+		amd64='1'
+	fi
+	
+	if [ "${triplet}" = 'aarch64-unknown-linux-gnu' ]; then
+		aarch64='1'
+	fi
+	
 	if [ "${distribution}" = 'debian' ]; then
 		debian='1'
 	fi
@@ -185,8 +196,16 @@ while read item; do
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( libm.so.6 AS_NEEDED ( libmvec_nonshared.a libmvec.so.1 ) )" > './libm.so'
 	fi
 	
-	if ( (( debian && distribution_version >= 11 )) || (( ubuntu && distribution_version >= 22 )) ) && [ "${triplet}" == 'x86_64-unknown-linux-gnu' ]; then
+	if ( (( debian && distribution_version >= 11 && amd64 )) || (( ubuntu && ( distribution_version >= 22 && amd64 || distribution_version >= 24 && aarch64 ) )) ); then
 		echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( libm.so.6 AS_NEEDED ( libmvec.so.1 ) )" > './libm.so'
+	fi
+	
+	if (( ubuntu && distribution_version >= 18 )) || (( debian && distribution_version >= 10 )); then
+		declare source="$(ls 'libm-2.'*'.a' || echo 'not-found')"
+		
+		if [ -f "${source}" ]; then
+			echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ${source} libmvec.a )" > './libm.a'
+		fi
 	fi
 	
 	if [[ "${triplet}" == mips*-unknown-linux-gnu ]] || [ "${triplet}" == 'powerpc-unknown-linux-gnu' ] || [ "${triplet}" == 's390-unknown-linux-gnu' ] || [ "${triplet}" == 'sparc-unknown-linux-gnu' ]; then
