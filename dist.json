@@ -977,6 +977,20 @@
 		"linux_version": 3.2,
 		"glibc_version": 2.13,
 		"packages": [
+			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_i386.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_i386.deb",
+			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_i386.deb"
+		],
+		"triplet": "i386-unknown-linux-gnu",
+		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.0,
+		"linux_version": 3.2,
+		"glibc_version": 2.13,
+		"packages": [
 			"https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_3.2.78-1_armel.deb",
 			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6-dev_2.13-38+deb7u10_armel.deb",
 			"https://archive.debian.org/debian/pool/main/e/eglibc/libc6_2.13-38+deb7u10_armel.deb"
