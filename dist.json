@@ -896,37 +896,143 @@
 		"loader": "ld64.so.1"
 	},
 	{
-		"distribution": "centos",
-		"distribution_version": 7.0,
-		"linux_version": 3.10,
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
 		"glibc_version": 2.17,
 		"packages": [
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/kernel-headers-3.10.0-1160.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-2.17-317.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-common-2.17-317.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-devel-2.17-317.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-headers-2.17-317.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-static-2.17-317.el7.x86_64.rpm"
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_amd64.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_amd64.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_amd64.deb"
 		],
 		"triplet": "x86_64-unknown-linux-gnu",
 		"output_format": "elf64-x86-64",
 		"loader": "ld-linux-x86-64.so.2"
 	},
 	{
-		"distribution": "centos",
-		"distribution_version": 7.0,
-		"linux_version": 3.10,
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
 		"glibc_version": 2.17,
 		"packages": [
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/kernel-headers-3.10.0-1160.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-2.17-317.el7.i686.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-common-2.17-317.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-devel-2.17-317.el7.i686.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-headers-2.17-317.el7.x86_64.rpm",
-			"https://archive.kernel.org/centos-vault/7.9.2009/os/x86_64/Packages/glibc-static-2.17-317.el7.i686.rpm"
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_i386.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_i386.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_i386.deb"
 		],
 		"triplet": "i386-unknown-linux-gnu",
 		"output_format": "elf32-i386",
+		"loader": "ld-linux.so.2"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_armel.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_armel.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_armel.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabi",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux.so.3"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_armhf.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_armhf.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_armhf.deb"
+		],
+		"triplet": "arm-unknown-linux-gnueabihf",
+		"output_format": "elf32-littlearm",
+		"loader": "ld-linux-armhf.so.3"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_ia64.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6.1-dev_2.17-97_ia64.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6.1_2.17-97_ia64.deb"
+		],
+		"triplet": "ia64-unknown-linux-gnu",
+		"output_format": "elf64-ia64-little",
+		"loader": "ld-linux-ia64.so.2"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_mips.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_mips.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_mips.deb"
+		],
+		"triplet": "mips-unknown-linux-gnu",
+		"output_format": "elf32-tradbigmips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_mipsel.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_mipsel.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_mipsel.deb"
+		],
+		"triplet": "mipsel-unknown-linux-gnu",
+		"output_format": "elf32-tradlittlemips",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_powerpc.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_powerpc.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_powerpc.deb"
+		],
+		"triplet": "powerpc-unknown-linux-gnu",
+		"output_format": "elf32-powerpc",
+		"loader": "ld.so.1"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_s390x.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_s390x.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_s390x.deb"
+		],
+		"triplet": "s390x-unknown-linux-gnu",
+		"output_format": "elf64-s390",
+		"loader": "ld64.so.1"
+	},
+	{
+		"distribution": "debian",
+		"distribution_version": 7.5,
+		"linux_version": 3.12,
+		"glibc_version": 2.17,
+		"packages": [
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/l/linux/linux-libc-dev_3.12.9-1_sparc.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6-dev_2.17-97_sparc.deb",
+			"https://snapshot.debian.org/archive/debian/20140210T220402Z/pool/main/e/eglibc/libc6_2.17-97_sparc.deb"
+		],
+		"triplet": "sparc-unknown-linux-gnu",
+		"output_format": "elf32-sparc",
 		"loader": "ld-linux.so.2"
 	},
 	{
