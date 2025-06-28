@@ -19,6 +19,7 @@ while read item; do
 	declare packages="$(jq '.packages' <<< "${item}")"
 	declare output_format="$(jq --raw-output '.output_format' <<< "${item}")"
 	declare loader="$(jq --raw-output '.loader' <<< "${item}")"
+	declare repository="$(jq --raw-output '.repository.url' <<< "${item}")"
 	
 	distribution_version=${distribution_version%.*}
 	
@@ -28,6 +29,8 @@ while read item; do
 	
 	declare amd64='0'
 	declare aarch64='0'
+	
+	wget --no-verbose --spider "${repository}"
 	
 	if [ "${triplet}" = 'x86_64-unknown-linux-gnu' ]; then
 		amd64='1'
@@ -210,6 +213,10 @@ while read item; do
 	
 	if [[ "${triplet}" == mips*-unknown-linux-gnu ]] || [ "${triplet}" == 'powerpc-unknown-linux-gnu' ] || [ "${triplet}" == 's390-unknown-linux-gnu' ] || [ "${triplet}" == 'sparc-unknown-linux-gnu' ]; then
 		[ -f "${sysroot_directory}/include/linux/pim.h" ] && patch --directory="${sysroot_directory}" --strip='1' --input="${workdir}/patches/linux_pim.patch"
+	fi
+	
+	if (( debian && distribution_version = 4 )); then
+		patch --directory="${sysroot_directory}" --strip='1' --input="${workdir}/patches/0001-Fix-declarations-of-gnu_dev-functions-on-glibc-2.3.patch"
 	fi
 	
 	cd "${temporary_directory}"
