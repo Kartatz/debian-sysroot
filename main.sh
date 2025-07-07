@@ -19,7 +19,9 @@ while read item; do
 	declare packages="$(jq '.packages' <<< "${item}")"
 	declare output_format="$(jq --raw-output '.output_format' <<< "${item}")"
 	declare loader="$(jq --raw-output '.loader' <<< "${item}")"
-	declare repository="$(jq --raw-output '.repository.url' <<< "${item}")"
+	
+	declare repository_url="$(jq --raw-output '.repository.url' <<< "${item}")"
+	declare repository_release="$(jq --raw-output '.repository.release' <<< "${item}")"
 	
 	distribution_version=${distribution_version%.*}
 	
@@ -30,7 +32,7 @@ while read item; do
 	declare amd64='0'
 	declare aarch64='0'
 	
-	wget --no-verbose --spider "${repository}"
+	wget --no-verbose --spider "${repository_url}dists/${repository_release}"
 	
 	if [ "${triplet}" = 'x86_64-unknown-linux-gnu' ]; then
 		amd64='1'
@@ -204,7 +206,7 @@ while read item; do
 	fi
 	
 	if (( ubuntu && distribution_version >= 18 )) || (( debian && distribution_version >= 10 )); then
-		declare source="$(ls 'libm-2.'*'.a' || echo 'not-found')"
+		declare source="$(ls 'libm-2.'*'.a' 2>/dev/null || echo 'not-found')"
 		
 		if [ -f "${source}" ]; then
 			echo -e "OUTPUT_FORMAT(${output_format})\nGROUP ( ${source} libmvec.a )" > './libm.a'
@@ -215,8 +217,9 @@ while read item; do
 		[ -f "${sysroot_directory}/include/linux/pim.h" ] && patch --directory="${sysroot_directory}" --strip='1' --input="${workdir}/patches/linux_pim.patch"
 	fi
 	
-	if (( debian && distribution_version = 4 )); then
-		patch --directory="${sysroot_directory}" --strip='1' --input="${workdir}/patches/0001-Fix-declarations-of-gnu_dev-functions-on-glibc-2.3.patch"
+	if (( debian && distribution_version == 4 )); then
+		patch --directory="${sysroot_directory}" --strip='1' --input="${workdir}/patches/0001-Disable-inlines-on-glibc-2.3.patch"
+		patch --directory="${sysroot_directory}" --strip='1' --input="${workdir}/patches/0001-Guard-inline-declarations-of-gnu_dev-functions-under.patch"
 	fi
 	
 	cd "${temporary_directory}"

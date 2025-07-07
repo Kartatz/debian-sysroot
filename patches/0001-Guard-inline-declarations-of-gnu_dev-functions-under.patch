@@ -1,0 +1,39 @@
+From 0b701fe5d34e9d08ea97ca5b57c3bb5860a76fad Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Wed, 9 Jul 2025 03:57:42 +0000
+Subject: [PATCH] Guard inline declarations of gnu_dev() functions under
+ __USE_EXTERN_INLINES define in glibc 2.3
+
+---
+ include/sys/sysmacros.h | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/include/sys/sysmacros.h b/include/sys/sysmacros.h
+index 179642f..5d25713 100644
+--- a/include/sys/sysmacros.h
++++ b/include/sys/sysmacros.h
+@@ -27,17 +27,17 @@
+    they need.  */
+ #ifdef __GLIBC_HAVE_LONG_LONG
+ __extension__
+-extern __inline unsigned int gnu_dev_major (unsigned long long int __dev)
++extern unsigned int gnu_dev_major (unsigned long long int __dev)
+      __THROW;
+ __extension__
+-extern __inline unsigned int gnu_dev_minor (unsigned long long int __dev)
++extern unsigned int gnu_dev_minor (unsigned long long int __dev)
+      __THROW;
+ __extension__
+-extern __inline unsigned long long int gnu_dev_makedev (unsigned int __major,
++extern unsigned long long int gnu_dev_makedev (unsigned int __major,
+ 							unsigned int __minor)
+      __THROW;
+ 
+-# if defined __GNUC__ && __GNUC__ >= 2
++# if defined __USE_EXTERN_INLINES && defined __GNUC__ && __GNUC__ >= 2
+ __extension__ extern __inline unsigned int
+ __NTH (gnu_dev_major (unsigned long long int __dev))
+ {
+-- 
+2.25.1
+

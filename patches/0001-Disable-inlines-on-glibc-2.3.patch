@@ -1,0 +1,27 @@
+From 0a6668f84dcb624df00290f87ea03ff14fb82984 Mon Sep 17 00:00:00 2001
+From: Kartatz <105828205+Kartatz@users.noreply.github.com>
+Date: Wed, 9 Jul 2025 02:53:07 +0000
+Subject: [PATCH] Disable inlines on glibc 2.3
+
+---
+ features.h | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/include/features.h b/include/features.h
+index 5733b9b..e9bab15 100644
+--- a/include/features.h
++++ b/include/features.h
+@@ -108,6 +108,10 @@
+ #undef	__FAVOR_BSD
+ #undef	__KERNEL_STRICT_NAMES
+ 
++#ifndef __NO_INLINE__
++# define __NO_INLINE__ 1
++#endif
++
+ /* Suppress kernel-name space pollution unless user expressedly asks
+    for it.  */
+ #ifndef _LOOSE_KERNEL_NAMES
+-- 
+2.25.1
+
