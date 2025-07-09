@@ -218,8 +218,12 @@ while read item; do
 	fi
 	
 	if (( debian && distribution_version == 4 )); then
-		patch --directory="${sysroot_directory}" --strip='1' --input="${workdir}/patches/0001-Disable-inlines-on-glibc-2.3.patch"
-		patch --directory="${sysroot_directory}" --strip='1' --input="${workdir}/patches/0001-Guard-inline-declarations-of-gnu_dev-functions-under.patch"
+		while read file; do
+			sed \
+				--in-place \
+				's/extern __inline__/extern __inline__ __attribute__((gnu_inline))/g; s/extern __inline/extern __inline __attribute__((gnu_inline))/g; s/extern inline/extern inline __attribute__((gnu_inline))/g' \
+				"${file}"
+		done <<< $(find "${sysroot_directory}/include" -type 'f')
 	fi
 	
 	cd "${temporary_directory}"
